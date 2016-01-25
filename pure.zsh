@@ -23,6 +23,8 @@
 # \e[K  => clears everything after the cursor on the current line
 # \e[2K => clear everything on the current line
 
+# use 'spectrum_ls' zsh funtion to lookup color codes. and then
+# $FG[000] for ZSH theme or in this case %F{000}.
 
 # turns seconds into human readable time
 # 165392 => 1d 21h 56m 32s
@@ -116,7 +118,7 @@ prompt_pure_preprompt_render() {
 	[[ -n ${prompt_pure_git_last_dirty_check_timestamp+x} ]] && git_color=red
 
 	# construct preprompt, beginning with path
-	local preprompt="%F{blue}%~%f"
+	local preprompt="%F{222}%~%f"
 	# git info
 	preprompt+="%F{$git_color}${vcs_info_msg_0_}${prompt_pure_git_dirty}%f"
 	# git pull/push arrows
